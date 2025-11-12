@@ -1,0 +1,532 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    scroll-behavior: smooth;
+}
+
+.all {
+    /* border: 5px solid red; */
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* position: relative; */
+}
+
+.side-left {
+    /* border: 2px solid rgb(141, 141, 141); */
+    height: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.all-cash {
+    border-bottom: 1px solid rgb(120, 120, 120);
+    height: 33%;
+    background-color: rgba(128, 128, 128, 0.242);
+    display: flex;
+}
+.cash_left {
+    height: 100%;
+    flex: 1;
+}
+.cash_left {
+    display: flex;
+    flex-direction: column;
+}
+.cash_title {
+    border-bottom: 2px solid rgb(120, 120, 120);
+    display: flex;
+    align-items: center;
+    height: 50px;
+    padding: 7px;
+    gap: 7px;
+}
+.cash_title>p {
+    color: #00ba47;
+    font-family: cursive;
+    font-size: 22px;
+}
+.regos {
+    flex: 1;
+    border-bottom: 2px solid rgb(120, 120, 120);
+    padding: 7px;
+}
+.kassa {
+    flex: 1;
+    padding: 7px;    
+}
+
+
+.cash_right {
+    border-left: 2px solid rgb(120, 120, 120);
+    height: 100%;
+    width: 250px;
+    padding: 7px;
+}
+.cash_right>ul {
+    list-style-type: none;
+}
+
+
+/* list */
+.list {
+    border-top: 1px solid rgb(120, 120, 120);
+    height: 67%;
+    background-color: rgba(128, 128, 128, 0.242);
+    display: flex; 
+    padding: 7px;   
+}
+
+.list_disp {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.disp_products {
+    width: 100%;
+    flex: 1;
+    border: 1px solid rgb(120, 120, 120);
+    background-color: #fff;
+    /* padding: 7px; */
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    overflow: auto;
+    border-radius: 3px;
+}
+.disp_products>header>p:not(:first-child),
+.disp_products>div>p:not(:first-child) {
+    flex: 1;
+}
+.disp_products>header>p:first-child,
+.disp_products>div>p:first-child {
+    margin-right: 10px;
+}
+.disp_products>header>p:nth-child(3),
+.disp_products>div>p:nth-child(3){
+    flex: 2;
+}
+.disp_products>header {
+    border-bottom: 1px solid rgb(120, 120, 120);
+    display: flex;
+    justify-content: space-between;
+    padding: 7px;
+    background-color: rgba(128, 128, 128, 0.681);
+    font-weight: 600;
+}
+.disp_products>div {
+    border-bottom: 1px solid rgba(120, 120, 120, 0.833);
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 3px;
+    padding: 1px 4px;
+    border-radius: 2px;
+}
+
+.disp_funks {
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 180px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 5px;
+    padding: 5px 0;
+}
+.disp_funks>button {
+    outline: none;
+    transition: 0.2s;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    line-height: 100%;
+    font-size: 18px;
+    font-weight: 600;
+    color: rgb(63, 63, 63);
+    overflow: hidden;
+}
+.disp_funks>button:active {
+    transition: 0.1s;
+    transform: scale(0.95);
+}
+.disp_funks>button>i {
+    font-size: 24px;
+}
+
+.right_funks {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 70px;
+    gap: 4px;
+}
+.right_funks>button {
+    width: 60px;
+    height: 65px;
+    font-size: 27px;
+    cursor: pointer;
+    outline: none;
+    color: rgb(63, 63, 63);
+    transition: 0.2s;
+}
+.right_funks>button:active {
+    transition: 0.1s;
+    transform: scale(0.95);
+}
+
+
+/* side right */
+.side-right {
+    width: 270px;
+    height: 100%;
+    border-left: 2px solid rgb(120, 120, 120);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgba(128, 128, 128, 0.242);
+}
+
+.vaqt {
+    width: 100%;
+    border-bottom: 1px solid rgb(120, 120, 120);
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    gap: 7px;
+    padding: 5px;
+    font-size: 22px;
+    font-weight: 600;
+}
+.vaqt_sana {
+    font-size: 18px;
+    color: rgb(47, 47, 47);
+}
+.vaqt_soat {
+    color: rgb(0, 194, 94);
+}
+
+.tulash {
+    display: flex;
+    margin: 12px;
+    background-color: #3B555F;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 33px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 5px;
+    border-radius: 3px;
+    height: 60px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.tulash:hover {
+    background-color: #5c8393;
+}
+.tulash:active {
+    transition: 0.1s;
+    transform: scale(0.95);
+}
+
+.calc-input {
+    margin: 0 12px;
+    outline: none;
+    border: 1px solid rgb(120, 120, 120);
+    border-radius: 3px;
+    padding: 7px 12px;
+}
+
+.calc {
+    width: 100%;
+    /* flex: 1; */
+    height: 420px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(13, 1fr);
+    gap: 5px;
+    padding: 5px 12px;
+}
+
+.calc>button {
+    font-size: 25px;
+    cursor: pointer;
+    outline: none;
+    transition: 0.2s;
+}
+.calc>button:active {
+    transition: 0.1s;
+    transform: scale(0.95);
+}
+
+.calc>button:nth-child(1){
+    grid-column: 1/4;
+}
+.calc>button:nth-child(2){
+    grid-column: 4/7;
+}
+.calc>button:nth-child(3){
+    grid-column: 1/3;
+    grid-row: 2/4;
+}
+.calc>button:nth-child(4){
+    grid-column: 3/5;
+    grid-row: 2/4;
+}
+.calc>button:nth-child(5){
+    grid-column: 5/7;
+    grid-row: 2/4;
+}
+.calc>button:nth-child(6){
+    grid-column: 1/3;
+    grid-row: 4/6;
+}
+.calc>button:nth-child(7){
+    grid-column: 3/5;
+    grid-row: 4/6;
+}
+.calc>button:nth-child(8){
+    grid-column: 5/7;
+    grid-row: 4/6;
+}
+.calc>button:nth-child(9){
+    grid-column: 1/3;
+    grid-row: 6/8;
+}
+.calc>button:nth-child(10){
+    grid-column: 3/5;
+    grid-row: 6/8;
+}
+.calc>button:nth-child(11){
+    grid-column: 5/7;
+    grid-row: 6/8;
+}
+.calc>button:nth-child(12){
+    grid-column: 1/3;
+    grid-row: 8/10;
+}
+.calc>button:nth-child(13){
+    grid-column: 3/5;
+    grid-row: 8/10;
+}
+.calc>button:nth-child(14){
+    grid-column: 5/7;
+    grid-row: 8/10;
+}
+.calc>button:nth-child(15){
+    grid-column: 1/3;
+    grid-row: 10/12;
+}
+.calc>button:nth-child(16){
+    grid-column: 3/7;
+    grid-row: 10/12;
+}
+.calc>button:nth-child(17){
+    grid-column: 1/7;
+    grid-row: 12/14;
+}
+
+.vozvrat {
+    /* border-top: 1px solid red; */
+    width: 100%;
+    flex: 1;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 12px;
+}
+.vozvrat>button {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    gap: 12px;
+    border-radius: 3px;
+    border: 1px solid gray;
+    outline: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.vozvrat>button:last-child {
+    border: none;
+    background-color: rgb(201, 30, 0);
+    color: #fff;
+}
+.vozvrat>button:active {
+    transition: 0.1s;
+    transform: scale(0.95);
+}
+
+
+/* Add Product */
+.add-product{
+    position:none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(82, 129, 91, 0.301);
+    backdrop-filter: blur(2px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box {
+    background-color: white;
+    width: 420px;
+    /* height: 300px; */
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 12px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+.box>h1 {
+    text-align: center;
+    color: #00ba47;
+    font-size: 23px;
+    font-family: cursive;
+}
+
+.form {
+    /* border: 1px solid black; */
+    width: 100%;
+    flex: 1;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    /* gap: 3px; */
+}
+.form>input {
+    height: 30px;
+    outline: none;
+    padding: 0 7px;
+    border: 1px solid rgb(117, 117, 117);
+    border-radius: 3px;
+    margin-bottom: 5px;
+}
+
+.form>button {
+    height: 39px;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    background-color:#008633;
+    font-size: 18px;
+    margin-top: 7px;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.form>button:hover{
+    background-color: #00ba47;
+}
+.form>button:active {
+    transition: 0.1s;
+    transform: scale(0.95);
+}
+
+
+/* View All Product */
+#allProduct {
+    background-color: rgba(0, 0, 0, 0.358); 
+    backdrop-filter: blur(2px);
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.allProductForm {
+    background-color: white;
+    width: 80%;
+    height: 100%;
+    margin: auto;
+    border-radius: 12px;
+    box-shadow: 0px 0px 15px 3px rgba(74, 74, 74, 0.479);
+    padding: 10px 30px;
+    overflow: hidden;
+}
+.allProductForm>h1 {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.allProductForm>div {
+    /* border: 1px solid black; */
+    overflow-y: scroll;
+    width: 100%;
+    height: calc(100vh - 120px);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.allProductFormDiv>div {
+    border: 1px solid rgb(99, 99, 99);
+    padding: 5px 13px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.allProductFormDiv>div:nth-child(odd){
+    background-color: rgba(128, 128, 128, 0.359);
+}
+
+.allProductFormActions {
+    /* background-color: gray; */
+    height: 100%;
+    display: flex;
+    gap: 5px;
+}
+.allProductFormActions>button:first-child {
+    background-color: rgb(0, 156, 0);
+    height: 30px;
+    padding: 0 13px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.allProductFormActions>button:first-child:hover {
+    transition: 0.07s;
+    background-color: rgb(0, 225, 0);
+}
+.allProductFormActions>button:first-child:active {
+    transform: scale(0.90);
+    transition: 0.1s;
+}
+
+.allProductFormActions>button:last-child {
+    background-color: rgb(211, 0, 0);
+    height: 30px;
+    padding: 0 13px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.allProductFormActions>button:last-child:hover {
+    transition: 0.07s;
+    background-color: rgb(255, 29, 29);
+}
+.allProductFormActions>button:last-child:active {
+    transition: 0.1s;
+    transform: scale(0.9);
+}

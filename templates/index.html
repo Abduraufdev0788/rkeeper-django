@@ -1,0 +1,201 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kassa</title>
+    <link rel="stylesheet" href='{% static "css/style.css" %}'>
+    <link rel="icon" href='{% static "images/store.png" %}'>
+    <script src='{% static "https://kit.fontawesome.com/dfead5f7ee.js" %}' crossorigin="anonymous"></script>
+    <script src='{% static "js/app.js" %}' defer></script>
+</head>
+<body>
+
+    <div class="all">
+        <main class="side-left">
+            <div class="all-cash">
+                <div class="cash_left">
+                    <div class="cash_title">
+                        <img src="./images/store.png" width="35" alt="">
+                        <p>Samandar & Mehroj</p>
+                    </div>
+                    <div class="regos">
+                        <p>Regos</p>
+                    </div>
+                    <div class="kassa">
+                        <p>Kassa</p>
+                    </div>
+                </div>
+
+                <div class="cash_right">
+                    <p>Karta</p>
+                    <ul>
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="list">
+
+                <div class="list_disp">
+                    <div class="disp_products">
+                        <header>
+                            <p>#</p>
+                            <p>Kod</p>
+                            <p>Nomi</p>
+                            <p>Narxi</p>
+                            <p>Soni</p>
+                            <p>Umumiy</p>
+                        </header>
+
+                        <!-- <div>
+                            <p>1</p>
+                            <p>132</p>
+                            <p>Kolbasa</p>
+                            <p>35.000</p>
+                            <p>2 ta</p>
+                            <p>70.000 so'm</p>
+                        </div> -->
+                    </div>
+
+                    <div class="disp_funks">
+                        <button>
+                            <i class="fa-solid fa-search"></i>
+                            <p>Поиск </p>
+                        </button>
+                        <button class="view-all-products">Все продукты</button>
+                        <button>Скидка</button>
+                        <button>Продавец </button>
+                        <button>Отключить чек</button>
+                        <button onclick="seeAddProduct()">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                        <button>Карта покупали</button>
+                        <button>Списать бонусы</button>
+                        <button>Касса</button>
+                        <button>Продолжить</button>
+                        <button>
+                            <i class="fa-solid fa-lock"></i>
+                            <p>Блокир..</p>
+                        </button>
+                        <button>Заказ</button>
+                        <button>Вид цены</button>
+                        <button>Поиск по чеку</button>
+                        <button>Чеки</button>
+                    </div>
+                </div>
+
+                <div class="right_funks">
+                    <button><i class="fa-solid fa-angles-up"></i></button>
+                    <button><i class="fa-solid fa-angles-down"></i></button>
+                    <button><i class="fa-solid fa-pen"></i></button>
+                    <button><i class="fa-solid fa-plus-minus"></i></button>
+                    <button><i class="fa-regular fa-calendar-xmark"></i></button>
+                    <button><i class="fa-solid fa-trash-can"></i></button>
+                </div>
+ 
+            </div>
+        </main>
+
+        <aside class="side-right">
+
+            <div class="vaqt">
+                <p class="vaqt_sana">00.00.0000</p>
+                <p class="vaqt_soat">00:00:00</p>
+            </div>
+
+            <button class="tulash">
+                <i class="fa-solid fa-wallet"></i>
+                <p>Оплатa (F8)</p>
+            </button>
+
+            <input class="calc-input" type="number" placeholder="ID" max="5">
+
+            <div class="calc">
+
+                <button>
+                    <i class="fa-solid fa-bolt"></i>
+                </button>
+                <button>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <button id="7">7</button>
+                <button id="8">8</button>
+                <button id="9">9</button>
+                <button id="4">4</button>
+                <button id="5">5</button>
+                <button id="6">6</button>
+                <button id="1">1</button>
+                <button id="2">2</button>
+                <button id="3">3</button>
+                <button id="0">0</button>
+                <button>.</button>
+                <button>00</button>
+                <button>C</button>
+                <button id="back">
+                    <i class="fa-solid fa-delete-left"></i>
+                </button>
+                <button id="enter">Enter</button>
+
+
+            </div>
+
+            <div class="vozvrat">
+                <button>
+                    <i class="fa-solid fa-money-bill-transfer"></i>
+                    <p>Возврат (F5)</p>
+                </button>
+                <button>
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <p>Выход (F12)</p>
+                </button>
+            </div>
+
+
+        </aside>
+    </div>
+
+    <!-- Add product -->
+    <div class="add-product">
+        <div class="box">
+            <h1>Mahsulot qo'shish</h1>
+
+            <form class="form" action="" method="POST">
+                <label for="nomi">Mahsulot nomi</label>
+                <input type="text" name="nomi" id="nomi" placeholder="Nomi:" minlength="2" required>
+                <!-- <br> -->
+
+                <label for="kodi">Mahsulot kodi</label>
+                <input type="number" name="kodi" id="kodi" placeholder="Kodi" minlength="2" maxlength="3" required>
+                <!-- <br> -->
+
+                <label for="narxi">Mahsulot narxi</label>
+                <input type="number" name="narxi" id="narxi" placeholder="Narxi" maxlength="9999999" required>
+                <!-- <br> -->
+
+                <button id="addProductBtn" type="button">Mahsultoni qo'shish</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- View All Products -->
+     <div id="allProduct">
+        <div class="allProductForm">
+            <h1>Barcha mahsulotlar</h1>
+            <div class="allProductFormDiv">
+                <div>
+                    <p>1. Mahsulot (Kod: 74) - $124</p>
+                    <span class="allProductFormActions">
+                        <button>edit</button>
+                        <button>delete</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+     </div>
+    
+</body>
+</html>
